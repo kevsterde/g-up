@@ -1,0 +1,18 @@
+.heading {
+    font-weight: bold;
+    line-height: 100%;
+
+    small {
+        display: block;
+        font-size: 30px;
+    }
+    span {
+        display: block;
+    }
+    &-primary {
+        color: var(--color-Blue-2);
+    }
+    &-secondary {
+        color: var(--color-white);
+    }
+}

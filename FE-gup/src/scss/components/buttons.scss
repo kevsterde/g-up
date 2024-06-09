@@ -1,0 +1,46 @@
+.btn {
+    border: none;
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+    max-width: fit-content;
+    border-radius: 55px;
+    padding: 15px 30px;
+    color: #fff;
+
+    transition: all 0.3s linear;
+    &-primary {
+        color: var(--color-white);
+        background-color: var(--color-Blue-1);
+        box-shadow: 0 0 0 2px transparent;
+    }
+    &-secondary {
+        background-color: var(--color-white);
+        color: var(--color-Blue-1);
+        box-shadow: 0 0 0 2px transparent;
+    }
+
+    &-primary:hover {
+        background-color: var(--color-Blue-2);
+        color: var(--color-white);
+        box-shadow: 0 0 0 2px var(--color-white);
+    }
+
+    &-secondary:hover {
+        background-color: var(--color-Blue-2);
+        color: var(--color-white);
+        box-shadow: 0 0 0 2px var(--color-white);
+    }
+    &-transparent {
+        color: var(--color-white);
+        background: none;
+        box-shadow: 0 0 0 2px transparent;
+    }
+
+    &-transparent:hover {
+        background-color: var(--color-Blue-2);
+  color: var(--color-white);
+  box-shadow: 0 0 0 2px var(--color-white);
+    }
+}

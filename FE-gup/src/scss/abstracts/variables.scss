@@ -1,0 +1,39 @@
+//============
+// Variables
+//============
+
+:root {
+    --font-primary: 'Poppins', sans-serif;
+
+    --font-secondary: 'Poppins', sans-serif;
+
+    --default-font-size: 1.6rem;
+
+    --default-line-height: 26px;
+    --default-font-weight: 300;
+
+    --color-primary: #333;
+    --color-gray-1: #292929;
+    --color-gray-2: #e9e9e9;
+    --color-gray-3: #1a1a1a;
+    --color-gray-4: #f1f1f1;
+    --color-gray-5: #6C6C6C;
+    --color-gray-6:#666 ;
+
+    --color-Blue-1: #0955d3;
+    --color-Blue-2: #0043af;
+    --color-Blue-3: #3f6ff9;
+
+    --color-red-1: #ef0000;
+
+    --color-black: #000;
+
+    --color-white: #fff;
+    --color-white-2: rgba(255, 255, 255, 0.7);
+
+    --text-stroke: rgb(255, 255, 255) 1px 0px 0px, rgb(255, 255, 255) 0.540302px 0.841471px 0px, rgb(255, 255, 255) -0.416147px 0.909297px 0px,
+        rgb(255, 255, 255) -0.989993px 0.14112px 0px, rgb(255, 255, 255) -0.653644px -0.756803px 0px, rgb(255, 255, 255) 0.283662px -0.958924px 0px,
+        rgb(255, 255, 255) 0.96017px -0.279416px 0px;
+
+    --linear-primary: linear-gradient(180deg, #0955d3 0%, #003080 99.99%, #0955d3 100%);
+}
