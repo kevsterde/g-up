@@ -51,6 +51,13 @@ exports.getAllUser = catchAsyncErrors(async (req, res, next) => {
   })
 })
 
+exports.getUser = catchAsyncErrors(async (req, res, next) => {
+  res.status(200).json({
+    message: 'success',
+    data: { user: req.user },
+  })
+})
+
 exports.updateCurrentUser = catchAsyncErrors(async (req, res, next) => {
   // Give error message if users post password
   if (req.body.password) {

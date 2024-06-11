@@ -15,6 +15,9 @@ router.patch('/resetPassword/:token', authController.resetPassword)
 router.use(authController.authenticated)
 
 router.get('/', authController.restrictTo('admin'), userController.getAllUser)
+
+router.get('/currentUser', userController.getUser)
+
 router.patch(
   '/me',
   userController.uploadProfilePhoto,
@@ -23,5 +26,6 @@ router.patch(
 )
 router.patch('/updateMyPassword', authController.updatePassword)
 router.get('/deactivate', userController.deactivate)
+router.post('/logout', authController.logout)
 
 module.exports = router
