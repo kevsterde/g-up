@@ -29,7 +29,7 @@ function App() {
                 </Route>
 
                 <Route element={<RequireAuth allowed="admin" />}>
-                    {/* <Route path="search" element={<Categories setSearchNumber={setSearchNumber} searchNumber={searchNumber} />} /> */}
+                    <Route path="search" element={<Categories setSearchNumber={setSearchNumber} searchNumber={searchNumber} />} />
                     <Route path="dashboard" element={<Admin />} />
                 </Route>
             </Routes>

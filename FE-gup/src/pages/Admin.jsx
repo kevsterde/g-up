@@ -4,7 +4,7 @@ const Admin = () => {
             <div className="admin helper-banner">
                 <div className="wrapper">
                     <div className="admin">
-                        <h1 className="heading">Admin Dashboard</h1>
+                        <h1 className="heading">Admin Dashboard.</h1>
                     </div>
                 </div>
             </div>

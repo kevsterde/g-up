@@ -9,18 +9,12 @@
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
         "precommit": "lint-staged",
-        "prepare": "husky install",
         "server": "json-server --watch data/data.json --port 9000 --delay 500"
     },
     "lint-staged": {
         "src/**/*.{js,jsx,ts,tsx}": [
             "eslint --fix"
         ]
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "yarn precommit"
-        }
     },
     "dependencies": {
         "@emotion/react": "^11.11.3",
@@ -49,7 +43,6 @@
         "eslint-plugin-react": "^7.33.2",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-refresh": "^0.4.4",
-        "husky": "^8.0.3",
         "lint-staged": "^15.1.0",
         "prettier": "^3.1.0",
         "sass": "^1.69.7",

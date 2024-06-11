@@ -13,8 +13,8 @@ router
     reportController.createReport,
   )
   .get(
-    authController.authenticated,
-    authController.restrictTo('admin'),
+    // authController.authenticated,
+    // authController.restrictTo('admin'),
     reportController.getAllReport,
   )
   .patch(

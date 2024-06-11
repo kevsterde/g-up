@@ -1,6 +1,8 @@
 const sharp = require('sharp')
 const multer = require('multer')
-
+const { promisify } = require('util')
+const User = require('../models/userModel')
+const jwt = require('jsonwebtoken')
 const Report = require('../models/reportModel')
 const AppError = require('../utils/appError')
 const catchAsyncErrors = require('../utils/catchAsyncErrors')
@@ -51,7 +53,27 @@ exports.createReport = catchAsyncErrors(async (req, res, next) => {
 })
 
 exports.getAllReport = catchAsyncErrors(async (req, res, next) => {
-  const reports = await Report.find()
+  let reports, token, user
+
+  if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+    token = req.headers.authorization.split(' ')[1]
+  } else if (req.cookies.jwt) {
+    token = req.cookies.jwt
+  }
+
+  if (token) {
+    const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET)
+    user = await User.findById(decoded.id)
+  }
+  // let reports = await Report.find({ status: 'approved' })
+  console.log('Role: ' + user?.role)
+  if (user?.role === 'admin') {
+    reports = await Report.find()
+  } else {
+    reports = await Report.find({ status: 'approved' })
+  }
+
+  // const reports = await Report.find()
   res.status(200).json({
     message: 'success',
     results: reports.length,
