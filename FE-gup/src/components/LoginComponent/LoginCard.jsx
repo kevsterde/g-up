@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import Cookies from 'js-cookie';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 import { MdOutlinePhoneAndroid } from 'react-icons/md';
 import { toast } from 'react-toastify';
@@ -42,7 +43,15 @@ const LoginCard = ({ setIsOpen, setIsLogin }) => {
                 const accessToken = data?.token;
 
                 const userDetails = data?.data;
-                setAuth({ userDetails, UserPass, accessToken, isSignedIn: true });
+
+                Cookies.set('jwt-auth', accessToken, {
+                    // expires: 1 / 8640,
+                    expires: new Date(Date.now() + 100 * 24 * 60 * 60 * 1000),
+                    // secure: process.env.NODE_ENV === 'production',
+                    // sameSite: 'strict',
+                });
+
+                setAuth({ userDetails, isSignedIn: true });
                 console.log(accessToken);
                 console.log(userDetails);
 

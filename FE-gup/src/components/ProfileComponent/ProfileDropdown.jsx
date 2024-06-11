@@ -4,6 +4,7 @@ import useAuth from '../../hooks/useAuth';
 function ProfileDropdown() {
     const { auth } = useAuth();
     const { userDetails } = auth;
+    console.log(userDetails);
     return (
         <>
             <div className="sample profiledropdown">
