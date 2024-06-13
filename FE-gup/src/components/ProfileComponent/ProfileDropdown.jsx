@@ -1,10 +1,20 @@
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-
+import Cookies from 'js-cookie';
 function ProfileDropdown() {
-    const { auth } = useAuth();
+    const { auth, setAuth } = useAuth();
     const { userDetails } = auth;
     console.log(userDetails);
+
+    const logoutHandler = () => {
+        console.log('clicked');
+        setAuth({ userDetails: null, isSignedIn: false });
+        Cookies.set('jwt-auth', '', {
+            expires: new Date(0),
+            // httpOnly: true,
+            // secure: process.env.NODE_ENV === 'production',
+        });
+    };
     return (
         <>
             <div className="sample profiledropdown">
@@ -22,7 +32,7 @@ function ProfileDropdown() {
                         <img src="images/icons/help.png" alt="help" />
                         <Link to="/faqs"> Help</Link>
                     </li>
-                    <li className="logout">
+                    <li className="logout" onClick={() => logoutHandler()}>
                         <img src="images/icons/logout.png" alt="logout" />
                         Logout
                     </li>

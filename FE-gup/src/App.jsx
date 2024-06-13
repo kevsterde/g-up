@@ -13,7 +13,6 @@ import { ToastContainer } from 'react-toastify';
 import RequireAuth from './components/RequireAuth';
 import 'react-toastify/dist/ReactToastify.css';
 import useAuth from './hooks/useAuth';
-import { jwtDecode } from 'jwt-decode';
 import Cookies from 'js-cookie';
 
 function App() {

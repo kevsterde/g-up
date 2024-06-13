@@ -73,7 +73,7 @@
     max-width: 1300px;
     margin: auto;
 
-    .nodata{
+    .nodata {
         text-align: center;
     }
 
@@ -161,6 +161,123 @@
                     background: var(--color-Blue-1);
                 }
             }
+        }
+    }
+}
+
+.searchItemsSkeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .searchItem {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 40px;
+        background: var(--color-Blue-2);
+        background: #fff;
+        align-items: center;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.08);
+
+        h2 {
+            width: 20%;
+            text-align: center;
+            font-weight: 400;
+            font-size: 20px;
+            background-image: linear-gradient(90deg, #dfdfdf, #c8c8c8, #eee);
+            background-size: 200px 100%;
+            background-repeat: no-repeat;
+            animation: progress 1.2s ease-in-out infinite;
+            border-radius: 5px;
+            height: 30px;
+        }
+
+        &_btn_holder {
+            width: 40%;
+            max-width: 350px;
+            background-image: linear-gradient(90deg, #dfdfdf, #c8c8c8, #eee);
+            background-size: 200px 100%;
+            background-repeat: no-repeat;
+            animation: progress 1.2s ease-in-out infinite;
+            border-radius: 5px;
+            height: 30px;
+        }
+    }
+}
+
+@keyframes progress {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.itemDetails {
+    &_info {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        &_left {
+            width: 50%;
+
+            ul {
+                li {
+                    display: flex;
+                    gap: 5px;
+                    line-height: 100%;
+                    margin-bottom: 20px;
+                    font-size: 24px;
+                    h3 {
+                        color: var(--color-Blue-1);
+                        font-weight: bold;
+                        width: 50%;
+                        max-width: 190px;
+                    }
+                    p {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+
+        &_right {
+            width: 40%;
+            text-align: right;
+
+            .scammerName {
+                display: block;
+                width: 100%;
+                font-size: 70px;
+                line-height: 100%;
+                font-weight: bold;
+                color: var(--color-Blue-2);
+                margin-bottom: 20px;
+            }
+            .scammerNumber {
+                font-size: 35px;
+                color: var(--color-Blue-2);
+                font-weight: 500;
+            }
+        }
+    }
+
+    &_ir {
+        margin-top: 20px;
+
+        &_title {
+            color: var(--color-Blue-1);
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        &_desc {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            background: rgb(199, 199, 199);
+            font-size: 20px;
         }
     }
 }
